@@ -88,8 +88,8 @@ A [Pareto](https://en.wikipedia.org/wiki/Pareto_distribution) distribution is a 
 var x = [ 0, 0.5, 1, 1.5, 2, 2.5 ];
 
 var out = pdf( x, {
-	'alpha': 1,
-	'beta': 6,
+	'alpha': 3,
+	'beta': 4,
 });
 // returns [...]
 ```

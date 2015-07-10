@@ -24,7 +24,7 @@ var expect = chai.expect,
 
 // TESTS //
 
-describe( 'matrix Pareto-pdf', function tests() {
+describe( 'matrix pdf', function tests() {
 
 	var alpha = 1,
 		beta = 1,

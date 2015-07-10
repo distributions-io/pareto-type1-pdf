@@ -18,7 +18,7 @@ var expect = chai.expect,
 
 // TESTS //
 
-describe( 'deepset Pareto-pdf', function tests() {
+describe( 'deepset pdf', function tests() {
 
 	var alpha = 1,		
 beta = 1;

@@ -45,6 +45,7 @@ describe( 'validate', function tests() {
 		var values, err;
 		 values = [
 			-2,
+			0,
 			'5',
 			[],
 			true,
@@ -66,6 +67,7 @@ it( 'should return an error if provided a `beta` parameter which is not a positi
 		var values, err;
 		 values = [
 			-2,
+			0,
 			'5',
 			[],
 			true,

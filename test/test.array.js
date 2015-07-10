@@ -18,7 +18,7 @@ var expect = chai.expect,
 
 // TESTS //
 
-describe( 'array Pareto-pdf', function tests() {
+describe( 'array pdf', function tests() {
 
 	var alpha = 1,
 		beta = 1;
