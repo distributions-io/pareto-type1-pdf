@@ -20,8 +20,8 @@ var expect = chai.expect,
 
 describe( 'accessor Pareto-pdf', function tests() {
 
-	var alpha = 1,	
- beta = 1;
+	var alpha = 1,		
+beta = 1;
 
 	it( 'should export a function', function test() {
 		expect( pdf ).to.be.a( 'function' );

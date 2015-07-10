@@ -1,4 +1,4 @@
-Probability Density Function#
+Probability Density Function
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
@@ -88,8 +88,8 @@ A [Pareto](https://en.wikipedia.org/wiki/Pareto_distribution) distribution is a 
 var x = [ 0, 0.5, 1, 1.5, 2, 2.5 ];
 
 var out = pdf( x, {
-	'alpha': 8,
-	'beta': 10,
+	'alpha': 2,
+	'beta': 6,
 });
 // returns [...]
 ```
