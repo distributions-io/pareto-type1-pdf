@@ -7,7 +7,7 @@ Probability Density Function
 The [probability density function](https://en.wikipedia.org/wiki/Probability_density_function) (PDF) for a [Pareto](https://en.wikipedia.org/wiki/Pareto_distribution) random variable is
 
 <div class="equation" align="center" data-raw-text="f(x;\alpha,\beta)=\begin{cases}\frac{\alpha\,\beta^\alpha}{x^{\alpha+1}} &\amp; \text{ for }x\ge \beta \\ 0 &\amp; \text{otherwise} \end{cases}" data-equation="eq:pdf_function">
-	<img src="" alt="Probability density function (PDF) for a Pareto distribution.">
+	<img src="https://cdn.rawgit.com/distributions-io/pareto-pdf/c61e395663625eb22bdbcb13f5fcc94590338574/docs/img/eqn.svg" alt="Probability density function (PDF) for a Pareto distribution.">
 	<br>
 </div>
 
