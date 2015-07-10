@@ -40,18 +40,18 @@ var matrix = require( 'dstructs-matrix' ),
 	i;
 
 out = pdf( 1 );
-// returns
+// returns 1
 
 out = pdf( -1 );
 // returns 0
 
 x = [ 0, 0.5, 1, 1.5, 2, 2.5 ];
 out = pdf( x );
-// returns [...]
+// returns [ 0, 0, 1, ~0.444, 0.25, 0.16 ]
 
 x = new Int8Array( x );
 out = pdf( x );
-// returns Float64Array( [...] )
+// returns Float64Array( [ 0,0,1,~0.444,0.25,0.16 ] )
 
 x = new Int16Array( 6 );
 for ( i = 0; i < 6; i++ ) {
@@ -66,9 +66,9 @@ mat = matrix( x, [3,2], 'int16' );
 
 out = pdf( mat );
 /*
-	[
-
-	   ]
+	[    0      0
+	     1 ~0.444
+	  0.25   0.16  ]
 */
 ```
 
@@ -85,13 +85,13 @@ The function accepts the following `options`:
 A [Pareto](https://en.wikipedia.org/wiki/Pareto_distribution) distribution is a function of 2 parameter(s): `alpha`(shape parameter) and `beta`(scale parameter). By default, `alpha` is equal to `1` and `beta` is equal to `1`. To adjust either parameter, set the corresponding option(s).
 
 ``` javascript
-var x = [ 0, 0.5, 1, 1.5, 2, 2.5 ];
+var x = [ 0, 2, 4, 6, 8, 10 ];
 
 var out = pdf( x, {
 	'alpha': 3,
 	'beta': 4,
 });
-// returns [...]
+// returns [ 0, 0, 0.75, 4/27, 3/64, 12/625 ]
 ```
 
 For non-numeric `arrays`, provide an accessor `function` for accessing `array` values.
@@ -113,7 +113,7 @@ function getValue( d, i ) {
 var out = pdf( data, {
 	'accessor': getValue
 });
-// returns [...]
+// returns [ 0, 0, 1, ~0.444, 0.25, 0.16 ]
 ```
 
 
@@ -135,12 +135,12 @@ var out = pdf( data, {
 });
 /*
 	[
-		{'x':[0,]},
-		{'x':[1,]},
-		{'x':[2,]},
-		{'x':[3,]},
-		{'x':[4,]},
-		{'x':[5,]}
+		{'x':[0,0]},
+		{'x':[1,0]},
+		{'x':[2,1]},
+		{'x':[3,~0.444]},
+		{'x':[4,0.25]},
+		{'x':[5,0.16]}
 	]
 */
 
@@ -158,13 +158,13 @@ x = new Int8Array( [0,1,2,3,4] );
 out = pdf( x, {
 	'dtype': 'int32'
 });
-// returns Int32Array( [...] )
+// returns Int32Array( [0,1,0,0,0] )
 
 // Works for plain arrays, as well...
 out = pdf( [0,0.5,1,1.5,2], {
 	'dtype': 'uint8'
 });
-// returns Uint8Array( [...] )
+// returns Uint8Array( [0,0,1,0,0] )
 ```
 
 By default, the function returns a new data structure. To mutate the input data structure (e.g., when input values can be discarded or when optimizing memory usage), set the `copy` option to `false`.
@@ -181,7 +181,7 @@ x = [ 0, 0.5, 1, 1.5, 2 ];
 out = pdf( x, {
 	'copy': false
 });
-// returns [...]
+// returns [ 0, 0, 1, ~0.444, 0.25, 0.16 ]
 
 bool = ( x === out );
 // returns true
@@ -201,9 +201,9 @@ out = pdf( mat, {
 	'copy': false
 });
 /*
-	[
-
-	   ]
+	[    0      0
+	     1 ~0.444
+	  0.25   0.16  ]
 */
 
 bool = ( mat === out );
