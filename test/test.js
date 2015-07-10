@@ -129,14 +129,18 @@ describe( 'distributions-pareto-pdf', function tests() {
 
 	it( 'should compute the Pareto pdf when provided a number', function test() {
 		assert.strictEqual( pdf( -1 ), 0 );
+		assert.strictEqual( pdf( 2, {
+			'alpha': 4,
+			'beta': 2
+		}), 2 );
 	});
 
 	it( 'should evaluate the Pareto pdf when provided a plain array', function test() {
 		var data, actual, expected, i;
 
-		data = [ -3, -2, -1, 0, 1, 2, 3 ];
+		data = [ 0, 1, 2, 3, 4, 5 ];
 		expected = [
-
+			0, 1, 1/4, 1/9, 1/16, 1/25
 		];
 
 		actual = pdf( data );
@@ -160,10 +164,10 @@ describe( 'distributions-pareto-pdf', function tests() {
 	it( 'should evaluate the Pareto pdf when provided a typed array', function test() {
 		var data, actual, expected, i;
 
-		data = new Int8Array( [ -3, -2, -1, 0, 1, 2, 3 ] );
+		data = new Int8Array( [  0, 1, 2, 3, 4, 5 ] );
 
 		expected = new Float64Array([
-
+			0, 1, 1/4, 1/9, 1/16, 1/25
 		]);
 
 		actual = pdf( data );
@@ -178,7 +182,7 @@ describe( 'distributions-pareto-pdf', function tests() {
 			'copy': false
 		});
 		expected = new Int8Array([
-
+			0, 1, 0, 0, 0, 0
 		]);
 		assert.strictEqual( actual, data );
 
@@ -190,9 +194,9 @@ describe( 'distributions-pareto-pdf', function tests() {
 	it( 'should evaluate the Pareto pdf element-wise and return an array of a specific type', function test() {
 		var data, actual, expected;
 
-		data = [ -3, -2, -1, 0, 1, 2, 3 ];
+		data = [ 0, 1, 2, 3, 4, 5 ];
 		expected = new Int8Array([
-
+			0, 1, 0, 0, 0, 0
 		]);
 
 		actual = pdf( data, {
@@ -208,17 +212,23 @@ describe( 'distributions-pareto-pdf', function tests() {
 		var data, actual, expected, i;
 
 		data = [
-			[0,-3],
-			[1,-2],
-			[2,-1],
-			[3,0],
-			[4,1],
-			[5,2],
-			[6,3]
+			[0,0],
+			[1,1],
+			[2,2],
+			[3,3],
+			[4,4],
+			[5,5],
+			[6,6]
 		];
 
 		expected = [
-
+			0,
+			1,
+			1/4,
+			1/9,
+			1/16,
+			1/25,
+			1/36
 		];
 
 		actual = pdf( data, {
@@ -250,16 +260,26 @@ describe( 'distributions-pareto-pdf', function tests() {
 		var data, actual, expected, i;
 
 		data = [
-			{'x':[0,-3]},
-			{'x':[1,-2]},
-			{'x':[2,-1]},
-			{'x':[3,0]},
-			{'x':[4,1]},
-			{'x':[5,2]},
-			{'x':[6,3]}
+			{'x':[9,0]},
+			{'x':[9,1]},
+			{'x':[9,2]},
+			{'x':[9,3]},
+			{'x':[9,4]},
+			{'x':[9,5]},
+			{'x':[9,6]},
+			{'x':[9,7]},
+			{'x':[9,8]},
 		];
 		expected = [
-
+			{'x':[9,0]},
+			{'x':[9,1]},
+			{'x':[9,1/4]},
+			{'x':[9,1/9]},
+			{'x':[9,1/16]},
+			{'x':[9,1/25]},
+			{'x':[9,1/36]},
+			{'x':[9,1/49]},
+			{'x':[9,1/64]},
 		];
 
 		actual = pdf( data, {
@@ -274,13 +294,15 @@ describe( 'distributions-pareto-pdf', function tests() {
 
 		// Specify a path with a custom separator...
 		data = [
-			{'x':[0,-3]},
-			{'x':[1,-2]},
-			{'x':[2,-1]},
-			{'x':[3,0]},
-			{'x':[4,1]},
-			{'x':[5,2]},
-			{'x':[6,3]}
+			{'x':[9,0]},
+			{'x':[9,1]},
+			{'x':[9,2]},
+			{'x':[9,3]},
+			{'x':[9,4]},
+			{'x':[9,5]},
+			{'x':[9,6]},
+			{'x':[9,7]},
+			{'x':[9,8]},
 		];
 		actual = pdf( data, {
 			'path': 'x/1',
@@ -304,7 +326,7 @@ describe( 'distributions-pareto-pdf', function tests() {
 		d2 = new Float64Array( 25 );
 		for ( i = 0; i < d1.length; i++ ) {
 			d1[ i ] = i / 5;
-			d2[ i ] = PDF( i / 5 );
+			d2[ i ] = PDF( i / 5, 1, 1 );
 		}
 		mat = matrix( d1, [5,5], 'float64' );
 		out = pdf( mat );
@@ -330,7 +352,7 @@ describe( 'distributions-pareto-pdf', function tests() {
 		d2 = new Float32Array( 25 );
 		for ( i = 0; i < d1.length; i++ ) {
 			d1[ i ] = i / 5;
-			d2[ i ] = PDF( i / 5 );
+			d2[ i ] = PDF( i / 5, 1, 1 );
 		}
 		mat = matrix( d1, [5,5], 'float64' );
 		out = pdf( mat, {

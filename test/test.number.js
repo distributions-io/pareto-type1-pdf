@@ -28,7 +28,10 @@ describe( 'number pdf', function tests() {
 	});
 
 	it( 'should evaluate the Pareto probability density function', function test() {
-		assert.closeTo( pdf( 2 ), alpha, beta, 1e-4 );
+		assert.closeTo( pdf( 2, alpha, beta), 0.25, 1e-7 );
+		assert.closeTo( pdf( 20, alpha, beta), 1/400, 1e-7 );
+		assert.closeTo( pdf( 200, alpha, beta), 1/40000, 1e-7 );
+
 	});
 
 });
