@@ -26,7 +26,10 @@ var expect = chai.expect,
 
 describe( 'matrix Pareto-pdf', function tests() {
 
-	var out,
+	var alpha = 1,	
+ beta = 1;var alpha = 1,	
+ beta = 1,
+		out,
 		mat,
 		d1,
 		d2,
@@ -36,7 +39,7 @@ describe( 'matrix Pareto-pdf', function tests() {
 	d2 = new Float64Array( 25 );
 	for ( i = 0; i < d1.length; i++ ) {
 		d1[ i ] = i / 5;
-		d2[ i ] = PDF( i / 5, 1,1 );
+		d2[ i ] = PDF( i / 5, alpha, beta );
 	}
 
 	beforeEach( function before() {
@@ -51,15 +54,15 @@ describe( 'matrix Pareto-pdf', function tests() {
 	it( 'should throw an error if provided unequal length matrices', function test() {
 		expect( badValues ).to.throw( Error );
 		function badValues() {
-			pdf( matrix( [10,10] ), mat, 1,1 );
+			pdf( matrix( [10,10] ), mat, alpha, beta );
 		}
 	});
 
 	it( 'should evaluate the Pareto pdf for each matrix element', function test() {
 		var actual;
 
-		actual = matrix( [5,5], 'int16' );
-		actual = pdf( actual, mat, 1,1 );
+		actual = matrix( [5,5], 'float64' );
+		actual = pdf( actual, mat, alpha, beta );
 
 		assert.deepEqual( actual.data, out.data );
 	});
@@ -71,13 +74,13 @@ describe( 'matrix Pareto-pdf', function tests() {
 		expected = matrix( [0,0] ).data;
 
 		mat = matrix( [0,10] );
-		assert.deepEqual( pdf( out, mat, 1,1 ).data, expected );
+		assert.deepEqual( pdf( out, mat, alpha, beta ).data, expected );
 
 		mat = matrix( [10,0] );
-		assert.deepEqual( pdf( out, mat, 1,1 ).data, expected );
+		assert.deepEqual( pdf( out, mat, alpha, beta ).data, expected );
 
 		mat = matrix( [0,0] );
-		assert.deepEqual( pdf( out, mat, 1,1 ).data, expected );
+		assert.deepEqual( pdf( out, mat, alpha, beta ).data, expected );
 	});
 
 });

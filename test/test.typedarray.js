@@ -20,6 +20,9 @@ var expect = chai.expect,
 
 describe( 'typed-array Pareto-pdf', function tests() {
 
+	var alpha = 1,	
+ beta = 1;
+
 	it( 'should export a function', function test() {
 		expect( pdf ).to.be.a( 'function' );
 	});
@@ -45,7 +48,7 @@ describe( 'typed-array Pareto-pdf', function tests() {
 		]);
 		actual = new Float64Array( data.length );
 
-		actual = pdf( actual, data );
+		actual = pdf( actual, data, alpha, beta );
 
 		// Evaluated on Wolfram Alpha:
 		expected = new Float64Array([
@@ -58,7 +61,7 @@ describe( 'typed-array Pareto-pdf', function tests() {
 	});
 
 	it( 'should return an empty array if provided an empty array', function test() {
-		assert.deepEqual( pdf( new Int8Array(), new Int8Array() ), new Int8Array() );
+		assert.deepEqual( pdf( new Int8Array(), new Int8Array(), alpha, beta ), new Int8Array() );
 	});
 
 });

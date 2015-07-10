@@ -20,22 +20,15 @@ var expect = chai.expect,
 
 describe( 'number Pareto-pdf', function tests() {
 
+	var alpha = 1,	
+ beta = 1;
+
 	it( 'should export a function', function test() {
 		expect( pdf ).to.be.a( 'function' );
 	});
 
-	it( 'should evaluate the Pareto pdf for a single value', function test() {
-		assert.closeTo( pdf( 2 ), , 1e-4 );
-	});
-
-	it( 'should return NaN if provided a NaN', function test() {
-		var val = pdf( NaN );
-		assert.isNumber( val );
-		assert.ok( val !== val );
-	});
-
-	it( 'should return a numeric value if provided a numeric value', function test() {
-		assert.isNumber( pdf( 1 ) );
+	it( 'should evaluate the Pareto probability density function', function test() {
+		assert.closeTo( pdf( 2 ), alpha, beta, 1e-4 );
 	});
 
 });

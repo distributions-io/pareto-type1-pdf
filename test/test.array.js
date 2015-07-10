@@ -6,9 +6,6 @@
 var // Expectation library:
 	chai = require( 'chai' ),
 
-	// Deep close to:
-	deepCloseTo = require( './utils/deepcloseto.js' ),
-
 	// Module to be tested:
 	pdf = require( './../lib/array.js' );
 
@@ -22,6 +19,9 @@ var expect = chai.expect,
 // TESTS //
 
 describe( 'array Pareto-pdf', function tests() {
+
+	var alpha = 1,	
+ beta = 1;
 
 	it( 'should export a function', function test() {
 		expect( pdf ).to.be.a( 'function' );
@@ -48,7 +48,7 @@ describe( 'array Pareto-pdf', function tests() {
 		];
 		actual = new Array( data.length );
 
-		actual = pdf( actual, data );
+		actual = pdf( actual, data, alpha, beta );
 
 		expected = [
 
@@ -68,7 +68,7 @@ describe( 'array Pareto-pdf', function tests() {
 
 		data = [ true, null, [], {} ];
 		actual = new Array( data.length );
-		actual = pdf( actual, data );
+		actual = pdf( actual, data, alpha, beta );
 
 		expected = [ NaN, NaN, NaN, NaN ];
 

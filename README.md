@@ -11,7 +11,7 @@ The [probability density function](https://en.wikipedia.org/wiki/Probability_den
 	<br>
 </div>
 
-where
+where `alpha` is the shape parameter and `beta` is the scale parameter.
 
 ## Installation
 
@@ -88,8 +88,8 @@ A [Pareto](https://en.wikipedia.org/wiki/Pareto_distribution) distribution is a 
 var x = [ 0, 0.5, 1, 1.5, 2, 2.5 ];
 
 var out = pdf( x, {
-	'alpha': 2,
-	'beta': 9,
+	'alpha': 8,
+	'beta': 10,
 });
 // returns [...]
 ```

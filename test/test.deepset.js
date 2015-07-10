@@ -6,9 +6,6 @@
 var // Expectation library:
 	chai = require( 'chai' ),
 
-	// Deep close to:
-	deepCloseTo = require( './utils/deepcloseto.js' ),
-
 	// Module to be tested:
 	pdf = require( './../lib/deepset.js' );
 
@@ -22,6 +19,9 @@ var expect = chai.expect,
 // TESTS //
 
 describe( 'deepset Pareto-pdf', function tests() {
+
+	var alpha = 1,	
+ beta = 1;
 
 	it( 'should export a function', function test() {
 		expect( pdf ).to.be.a( 'function' );
@@ -40,7 +40,7 @@ describe( 'deepset Pareto-pdf', function tests() {
 			{'x':3}
 		];
 
-		data = pdf( data, 1,1, 'x' );
+		data = pdf( data, alpha, beta, 'x' );
 
 		expected = [
 
@@ -61,7 +61,7 @@ describe( 'deepset Pareto-pdf', function tests() {
 			{'x':[9,3]}
 		];
 
-		data = pdf( data, 1,1, 'x/1', '/' );
+		data = pdf( data, alpha, beta, 'x/1', '/' );
 		expected = [
 
 		];
@@ -72,8 +72,8 @@ describe( 'deepset Pareto-pdf', function tests() {
 	});
 
 	it( 'should return an empty array if provided an empty array', function test() {
-		assert.deepEqual( pdf( [], 1,1, 'x' ), [] );
-		assert.deepEqual( pdf( [], 1,1, 'x', '/' ), [] );
+		assert.deepEqual( pdf( [], alpha, beta, 'x' ), [] );
+		assert.deepEqual( pdf( [], alpha, beta, 'x', '/' ), [] );
 	});
 
 	it( 'should handle non-numeric values by setting the element to NaN', function test() {
@@ -85,7 +85,7 @@ describe( 'deepset Pareto-pdf', function tests() {
 			{'x':[]},
 			{'x':{}}
 		];
-		actual = pdf( data, 1,1, 'x' );
+		actual = pdf( data, alpha, beta, 'x' );
 
 		expected = [
 			{'x':NaN},
