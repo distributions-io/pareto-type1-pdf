@@ -1,10 +1,10 @@
 Probability Density Function
 ===
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> [Pareto](https://en.wikipedia.org/wiki/Pareto_distribution) distribution probability density function (PDF).
+> [Pareto (Type I)](https://en.wikipedia.org/wiki/Pareto_distribution) distribution probability density function (PDF).
 
-The [probability density function](https://en.wikipedia.org/wiki/Probability_density_function) (PDF) for a [Pareto](https://en.wikipedia.org/wiki/Pareto_distribution) random variable is
+The [probability density function](https://en.wikipedia.org/wiki/Probability_density_function) (PDF) for a [Pareto (Type I)](https://en.wikipedia.org/wiki/Pareto_distribution) random variable is
 
 <div class="equation" align="center" data-raw-text="f(x;\alpha,\beta)=\begin{cases}\frac{\alpha\,\beta^\alpha}{x^{\alpha+1}} &\amp; \text{ for }x\ge \beta \\ 0 &\amp; \text{otherwise} \end{cases}" data-equation="eq:pdf_function">
 	<img src="https://cdn.rawgit.com/distributions-io/pareto-pdf/c61e395663625eb22bdbcb13f5fcc94590338574/docs/img/eqn.svg" alt="Probability density function (PDF) for a Pareto distribution.">
@@ -82,7 +82,7 @@ The function accepts the following `options`:
 *	__path__: [deepget](https://github.com/kgryte/utils-deep-get)/[deepset](https://github.com/kgryte/utils-deep-set) key path.
 *	__sep__: [deepget](https://github.com/kgryte/utils-deep-get)/[deepset](https://github.com/kgryte/utils-deep-set) key path separator. Default: `'.'`.
 
-A [Pareto](https://en.wikipedia.org/wiki/Pareto_distribution) distribution is a function of 2 parameter(s): `alpha`(shape parameter) and `beta`(scale parameter). By default, `alpha` is equal to `1` and `beta` is equal to `1`. To adjust either parameter, set the corresponding option(s).
+A [Pareto](https://en.wikipedia.org/wiki/Pareto_distribution) distribution is a function of two parameters: `alpha`(shape parameter) and `beta`(scale parameter). By default, `alpha` is equal to `1` and `beta` is equal to `1`. To adjust either parameter, set the corresponding option.
 
 ``` javascript
 var x = [ 0, 2, 4, 6, 8, 10 ];
@@ -380,8 +380,8 @@ Copyright &copy; 2015. The [Compute.io](https://github.com/compute-io) Authors.
 [travis-image]: http://img.shields.io/travis/distributions-io/pareto-pdf/master.svg
 [travis-url]: https://travis-ci.org/distributions-io/pareto-pdf
 
-[coveralls-image]: https://img.shields.io/coveralls/distributions-io/pareto-pdf/master.svg
-[coveralls-url]: https://coveralls.io/r/distributions-io/pareto-pdf?branch=master
+[codecov-image]: https://img.shields.io/codecov/github/distributions-io/pareto-pdf/master.svg
+[codecov-url]: https://codecov.io/github/distributions-io/pareto-pdf?branch=master
 
 [dependencies-image]: http://img.shields.io/david/distributions-io/pareto-pdf.svg
 [dependencies-url]: https://david-dm.org/distributions-io/pareto-pdf
