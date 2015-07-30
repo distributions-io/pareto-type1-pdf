@@ -16,7 +16,7 @@ where `alpha` is the shape parameter and `beta` is the scale parameter.
 ## Installation
 
 ``` bash
-$ npm install distributions-pareto-pdf
+$ npm install distributions-pareto-type1-pdf
 ```
 
 For use in the browser, use [browserify](https://github.com/substack/node-browserify).
@@ -25,7 +25,7 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 ## Usage
 
 ``` javascript
-var pdf = require( 'distributions-pareto-pdf' );
+var pdf = require( 'distributions-pareto-type1-pdf' );
 ```
 
 #### pdf( x[, options] )
@@ -271,7 +271,7 @@ bool = ( mat === out );
 ## Examples
 
 ``` javascript
-var pdf = require( 'distributions-pareto-pdf' ),
+var pdf = require( 'distributions-pareto-type1-pdf' ),
 	matrix = require( 'dstructs-matrix' );
 
 var data,
@@ -374,20 +374,20 @@ $ make view-cov
 Copyright &copy; 2015. The [Compute.io](https://github.com/compute-io) Authors.
 
 
-[npm-image]: http://img.shields.io/npm/v/distributions-pareto-pdf.svg
-[npm-url]: https://npmjs.org/package/distributions-pareto-pdf
+[npm-image]: http://img.shields.io/npm/v/distributions-pareto-type1-pdf.svg
+[npm-url]: https://npmjs.org/package/distributions-pareto-type1-pdf
 
-[travis-image]: http://img.shields.io/travis/distributions-io/pareto-pdf/master.svg
-[travis-url]: https://travis-ci.org/distributions-io/pareto-pdf
+[travis-image]: http://img.shields.io/travis/distributions-io/pareto-type1-pdf/master.svg
+[travis-url]: https://travis-ci.org/distributions-io/pareto-type1-pdf
 
-[codecov-image]: https://img.shields.io/codecov/github/distributions-io/pareto-pdf/master.svg
-[codecov-url]: https://codecov.io/github/distributions-io/pareto-pdf?branch=master
+[codecov-image]: https://img.shields.io/codecov/c/github/distributions-io/pareto-type1-pdf/master.svg
+[codecov-url]: https://codecov.io/github/distributions-io/pareto-type1-pdf?branch=master
 
-[dependencies-image]: http://img.shields.io/david/distributions-io/pareto-pdf.svg
-[dependencies-url]: https://david-dm.org/distributions-io/pareto-pdf
+[dependencies-image]: http://img.shields.io/david/distributions-io/pareto-type1-pdf.svg
+[dependencies-url]: https://david-dm.org/distributions-io/pareto-type1-pdf
 
-[dev-dependencies-image]: http://img.shields.io/david/dev/distributions-io/pareto-pdf.svg
-[dev-dependencies-url]: https://david-dm.org/dev/distributions-io/pareto-pdf
+[dev-dependencies-image]: http://img.shields.io/david/dev/distributions-io/pareto-type1-pdf.svg
+[dev-dependencies-url]: https://david-dm.org/dev/distributions-io/pareto-type1-pdf
 
-[github-issues-image]: http://img.shields.io/github/issues/distributions-io/pareto-pdf.svg
-[github-issues-url]: https://github.com/distributions-io/pareto-pdf/issues
+[github-issues-image]: http://img.shields.io/github/issues/distributions-io/pareto-type1-pdf.svg
+[github-issues-url]: https://github.com/distributions-io/pareto-type1-pdf/issues
