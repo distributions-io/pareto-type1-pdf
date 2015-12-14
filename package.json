@@ -20,18 +20,26 @@
   "main": "./lib",
   "repository": {
     "type": "git",
-    "url": "git://github.com/compute-io/pareto-pdf.git"
+    "url": "git://github.com/distributions-io/pareto-pdf.git"
   },
   "keywords": [
     "distributions.io",
     "distributions",
+    "distribution",
+    "continuous",
     "probability",
     "statistics",
     "stats",
-    "pdf"
+    "pdf",
+    "density",
+    "extreme value",
+    "finance",
+    "actuarial science",
+    "power law",
+    "exponential family"
   ],
   "bugs": {
-    "url": "https://github.com/compute-io/pareto-pdf/issues"
+    "url": "https://github.com/distributions-io/pareto-pdf/issues"
   },
   "dependencies": {
     "compute-array-constructors": "^1.0.0",

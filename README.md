@@ -11,7 +11,7 @@ The [probability density function](https://en.wikipedia.org/wiki/Probability_den
 	<br>
 </div>
 
-where `alpha` is the shape parameter and `beta` is the scale parameter.
+where `alpha > 0` is the shape parameter and `beta > 0` is the scale parameter.
 
 ## Installation
 
@@ -82,7 +82,7 @@ The function accepts the following `options`:
 *	__path__: [deepget](https://github.com/kgryte/utils-deep-get)/[deepset](https://github.com/kgryte/utils-deep-set) key path.
 *	__sep__: [deepget](https://github.com/kgryte/utils-deep-get)/[deepset](https://github.com/kgryte/utils-deep-set) key path separator. Default: `'.'`.
 
-A [Pareto](https://en.wikipedia.org/wiki/Pareto_distribution) distribution is a function of two parameters: `alpha`(shape parameter) and `beta`(scale parameter). By default, `alpha` is equal to `1` and `beta` is equal to `1`. To adjust either parameter, set the corresponding option.
+A [Pareto](https://en.wikipedia.org/wiki/Pareto_distribution) distribution is a function of two parameters: `alpha > 0`(shape parameter) and `beta > 0`(scale parameter). By default, `alpha` is equal to `1` and `beta` is equal to `1`. To adjust either parameter, set the corresponding option.
 
 ``` javascript
 var x = [ 0, 2, 4, 6, 8, 10 ];
